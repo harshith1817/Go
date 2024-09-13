@@ -1,48 +1,27 @@
 package main
-
-import "fmt"
-
-func lcm(t1 int, t2 int) {
-    var lcmnum int = 1
-    if t1 > t2 {
-        lcmnum = t1
-    } else {
-        lcmnum = t2
-    }
-    for {
-        if lcmnum % t1 == 0 && lcmnum % t2 == 0 {
-            fmt.Printf("LCM of %d and %d is %d", t1, t2, lcmnum)
-            break
-        }
-        lcmnum++
-    }
-    return
-}
-
-func gcd(t1 int, t2 int) {
-    var gcdnum int
-    for i: = 1;
-    i <= t1 && i <= t2;
-    i++{
-        if t1 % i == 0 && gcdnum % i == 0 {
-            gcdnum = i
-        }
-    }
-    fmt.Print("gcd is:", gcdnum)
-    return
-}
-
-func main() {
-    var n1, n2, action int
-    fmt.Println("enter 2 positive integers:")
-    fmt.Scanln( & n1)
-    fmt.Scanln( & n2)
-    fmt.Println("enter 1 for lcm and 2 for gcd")
-    fmt.Scanln( & action)
-    switch action {
-        case 1:
-            lcm(n1, n2)
-        case 2:
-            gcd(n1, n2)
-    }
+import ("fmt")
+func gcd(num1 int, num2 int) int {
+if num2 == 0 {
+return num1
+} return gcd(num2, num1%num2)
+}func lcm(num1 int, num2 int) int {
+return (num1 * num2) / gcd(num1, num2)
+}func main() {
+var num1, num2, choice int
+fmt.Println("Enter number one:")
+fmt.Scanln(&num1)
+fmt.Println("Enter number two:")
+fmt.Scanln(&num2)
+fmt.Println("Enter choice: 1 for GCD and 2 for LCM")
+fmt.Scanln(&choice)
+switch choice {
+case 1:
+fmt.Printf("GCD of %d and %d is %d\n", num1, num2, 
+gcd(num1, num2))
+case 2:
+fmt.Printf("LCM of %d and %d is %d\n", num1, num2, 
+lcm(num1, num2))
+default:
+fmt.Println("Invalid choice. Please enter 1 for GCD or 2 for 
+LCM.")
 }
