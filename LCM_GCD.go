@@ -21,7 +21,7 @@ func lcm(t1 int, t2 int) {
 
 func gcd(t1 int, t2 int) {
     var gcdnum int
-    for i:= 1;
+    for i: = 1;
     i <= t1 && i <= t2;
     i++{
         if t1 % i == 0 && gcdnum % i == 0 {
