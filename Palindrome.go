@@ -6,7 +6,7 @@ func main() {
     fmt.Println("Golang program to check for palindrome")
     var number, rem, temporary int
     var reverse int = 0
-    number = 4545
+    number = 424
     temporary = number
     for {
         rem = number % 10

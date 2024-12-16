@@ -7,11 +7,11 @@ func main() {
     fmt.Print("Enter number of rows :")
     fmt.Scan( & rows)
 
-    for i: = 1;
+    for i:= 1;
     i <= rows;
     i++{
 
-        for j: = 1;
+        for j:= 1;
         j <= rows - i;
         j++{
             fmt.Print(" ")
